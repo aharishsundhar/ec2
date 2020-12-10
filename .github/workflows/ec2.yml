@@ -31,7 +31,7 @@ jobs:
           privateKey: ${{ secrets.PRIVATE_KEY }}
       - name: ec2 docker procees show
         run: |
-          sudo ssh -i $privateKey ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com 
+          sudo ssh -i ${{ secrets.PRIVATE_KEY }} ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com 
           sudo ls
           sudo pwd
        
