@@ -46,7 +46,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.REGION }}
       - name: store data dist upload s3 bucket
-        run: : |
+        run: |
           cd home/ubuntu/nissan_harish/quoteomatictest .
           ls
       # - name: Deploy app build to S3 bucket
