@@ -35,7 +35,7 @@ jobs:
         uses: horochx/deploy-via-scp@master
         with:
           privateKey: ${{ secrets.PRIVATE_KEY }}
-          command: |
+      - run: |
             -r ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan-siva/quoteomatictest . ~/home/runner/work/ec2/ec2
             
             
