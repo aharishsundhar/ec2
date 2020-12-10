@@ -30,7 +30,8 @@ jobs:
         with:
           privateKey: ${{ secrets.PRIVATE_KEY }}
       - name: ec2 docker procees show
-        run: | 
+        run: |
+          sudo ssh -i "ubuntu-geppetto.pem" ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com 
           sudo ls
           sudo pwd
        
