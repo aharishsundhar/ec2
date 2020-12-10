@@ -33,7 +33,7 @@ jobs:
           uses: horochx/deploy-via-scp@master
           command: |
             ls
-            cd home/ubuntu/nissan_harish/quoteomatictest .
+            cd home/ubuntu/nissan_harish/quoteomatictest/
 
 #       - uses: actions/checkout@v2
 
