@@ -25,11 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Execute SSH commmands on remote server
-        uses: JimCronqvist/action-ssh@master
-        with:
-          hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
-          privateKey: ${{ secrets.PRIVATE_KEY }}
+#       - name: Execute SSH commmands on remote server
+#         uses: JimCronqvist/action-ssh@master
+#         with:
+#           hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
+#           privateKey: ${{ secrets.PRIVATE_KEY }}
           
       - name: download file dist nissan
         uses: horochx/deploy-via-scp@master
