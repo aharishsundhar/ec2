@@ -28,10 +28,10 @@ jobs:
       - name: Execute SSH commmands on remote server
         uses: JimCronqvist/action-ssh@master
         with:
+          hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
           privateKey: ${{ secrets.PRIVATE_KEY }}
-      - name: ec2 docker procees show
-        run: |
-          sudo ssh -i ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com 
-          sudo ls
-          sudo pwd
+      - commmand: | 
+            ls
+            pwd
+            docker ps -a
        
