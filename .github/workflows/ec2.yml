@@ -33,6 +33,7 @@ jobs:
           command: |
             ls
             cd home/ubuntu/nissan_harish/quoteomatictest/
+            ls
 
 #       - uses: actions/checkout@v2
 
