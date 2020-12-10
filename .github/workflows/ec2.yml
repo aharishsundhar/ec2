@@ -33,10 +33,10 @@ jobs:
           
       - name: download file dist nissan
         uses: horochx/deploy-via-scp@master
-        with:
-          privateKey: ${{ secrets.PRIVATE_KEY }}
+        env: 
+         privateKey: ${{ secrets.PRIVATE_KEY }}
       - run: |
-            -r ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan-siva/quoteomatictest . ~/home/runner/work/ec2/ec2
+           scp ssh -i $privateKey -r ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan-siva/quoteomatictest . ~/home/runner/work/ec2/ec2
             
             
 
