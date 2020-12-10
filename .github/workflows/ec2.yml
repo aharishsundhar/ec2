@@ -30,6 +30,5 @@ jobs:
         with:
           privateKey: ${{ secrets.PRIVATE_KEY }}
         run: | 
-          ls
           docker ps -a
        
