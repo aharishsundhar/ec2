@@ -30,18 +30,10 @@ jobs:
         with:
           hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
           privateKey: ${{ secrets.PRIVATE_KEY }}
-            
-#   Upload_S3:
-#       runs-on: ubuntu-latest
-#       needs: ec2login
-      
-#       steps:
-      - uses: horochx/deploy-via-scp@master
-        with:
-          hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan-siva/quoteomatictest .'
           command: |
-            ls
+            scp -i -r $hosts:/home/ubuntu/nissan-siva/quoteomatictest .
             
+
 #         - uses: actions/checkout@v2
 
 #         # Runs a single command using the runners shell
