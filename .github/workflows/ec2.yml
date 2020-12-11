@@ -34,10 +34,9 @@ jobs:
       - name: download file dist nissan
         uses: appleboy/scp-action@master
         with:
-         hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
          privateKey: ${{ secrets.PRIVATE_KEY }}
          command: |
-           l
+           ls
            
     
             
