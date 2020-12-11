@@ -29,7 +29,7 @@ jobs:
           privateKey: ${{ secrets.PRIVATE_KEY }}
         run: |
           cd /home/runner/work/ec2/ec2/
-          scp -i $privateKey -r ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan_harish/quoteomatictest .
+          cat $privateKey
           
 
 
