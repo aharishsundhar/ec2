@@ -31,17 +31,23 @@ jobs:
 #           hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
 #           privateKey: ${{ secrets.PRIVATE_KEY }}
           
-      - name: download file dist nissan
-        uses: appleboy/scp-action@master
-        with:
-         privateKey: ${{ secrets.PRIVATE_KEY }}
-      - name: check github local file
-        run: |
-          ls
-           
-    
-            
-            
+#       - name: download file dist nissan
+#         uses: JimCronqvist/action-ssh@master
+#         with:
+#          privateKey: ${{ secrets.PRIVATE_KEY }}
+#       - name: check github local file
+#         run: |
+#           ls
+      - name: install ssh
+        run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
+      - name: login ssh
+        run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P ubuntu@ec2-34-197-46-177.compute-1.amazonaws.co"
+      - name: copy the war file
+        run: sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/ec2/ec2
 
-            
-       
+
+
+
+
+
+
