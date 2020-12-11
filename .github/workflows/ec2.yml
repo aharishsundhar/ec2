@@ -41,7 +41,7 @@ jobs:
       - name: install ssh
         run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
       - name: login ssh
-        run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com"
+        run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com "ls"
       - name: copy the war file
         run: sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/ec2/ec2
 
