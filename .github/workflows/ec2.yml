@@ -30,7 +30,7 @@ jobs:
           host: ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com
           username: ubuntu
           port: 22
-          key: ${{ secrets.KEY }}
+          key: ${{ secrets.AWS_KEY }}
           source: "/nissan_harish/quoteomatictest"
 
 
