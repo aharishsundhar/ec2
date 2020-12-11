@@ -29,7 +29,8 @@ jobs:
           privateKey: ${{ secrets.PRIVATE_KEY }}
         run: |
           cd /home/runner/work/ec2/ec2/
-          echo $privateKey
+          ls
+          cat ubuntu-geppetto.pem
           
 
 
