@@ -26,9 +26,9 @@ jobs:
       - uses: actions/checkout@v2
         
       - name: store file
-        uses: JimCronqvist/action-ssh@master
+        uses: appleboy/scp-action@master
         with:
-          privateKey: ${{ secrets.PRIVATE_KEY }}
+          store: ${{}}
           command: |
             scp -i ${{ secrets.PRIVATE_KEY }} -r ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan_harish/quoteomatictest .      
 
