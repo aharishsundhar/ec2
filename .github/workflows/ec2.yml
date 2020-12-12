@@ -27,12 +27,12 @@ jobs:
       
       - name: Execute SSH commmands on remote server
         run: |
-          cd home
+          mkdir dist
+          cd dist
+          touch index.html
+          cd
           ls
-          cd runner
-          ls
-          cd work
-          ls
+          aws s3 cp ./dist/ s3://harish321
           
              
              
