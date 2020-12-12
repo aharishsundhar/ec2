@@ -40,7 +40,7 @@ jobs:
           ls
           cd ..
           ls
-          aws s3 cp ./dist s3://harish321
+          aws s3 sync ./dist s3://harish321
           
              
              
