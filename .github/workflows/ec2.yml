@@ -25,16 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Upload file to bucket
-        uses: zdurham/s3-upload-github-action@master
+      - name: Execute SSH commmands on remote server
+        uses: JimCronqvist/action-ssh@master
         with:
-          args: --acl public-read
-        env:
-          FILE: ./README.md
-          AWS_REGION: 'us-east-1'
-          S3_BUCKET: harish321
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }} 
+          hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+          command: |
+            scp -i ${{ secrets.PRIVATE_KEY }} -r ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com:/home/ubuntu/nissan-siva/quoteomatictest ~/home/runner/work/ec2/ec2/ 
              
              
 
