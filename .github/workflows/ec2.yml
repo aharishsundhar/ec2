@@ -30,7 +30,7 @@ jobs:
         with:
           args: --acl public-read
         env:
-          FILE: .
+          FILE: ./README.md
           AWS_REGION: 'us-east-1'
           S3_BUCKET: harish321
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
