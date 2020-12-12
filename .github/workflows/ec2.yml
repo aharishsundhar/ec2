@@ -25,6 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.SECRET_KEY }}
+          aws-region: ${{ secrets.REGION }}
+      
       - name: Execute SSH commmands on remote server
         run: |
           mkdir dist
@@ -33,6 +40,7 @@ jobs:
           ls
           cd ..
           ls
+          aws s3 cp ./dist/ s3://harish321
           
              
              
