@@ -30,7 +30,7 @@ jobs:
           HOST: ec2-34-197-46-177.compute-1.amazonaws.com
           USERNAME: ubuntu
           PORT: 22
-          KEY: ${{ privateKey.KEY }}
+          KEY: ${{ secrets.PRIVATE_KEY }}
         with:
           source: "/home/ubuntu/nissan_harish/quoteomatictest"
           target: "/home/runner/work/ec2/ec2" 
