@@ -30,7 +30,8 @@ jobs:
           mkdir dist
           cd dist
           touch index.txt
-          cd
+          ls
+          cd ..
           ls
           
              
