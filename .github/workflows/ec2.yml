@@ -37,10 +37,13 @@ jobs:
         with:
           hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
           privateKey: ${{ secrets.PRIVATE_KEY }}
+          aws-access-key-id: ${{ secrets.ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.SECRET_KEY }}
+          aws-region: ${{ secrets.REGION }}
           command: |
             ls
-            aws s3 sync /nissan_harish/quoteomatictest/ s3://harish321 
-      
+             
+
             
             
         
