@@ -36,7 +36,10 @@ jobs:
             git pull git@github.com:dan-castillo/nissan-demo.git
             git branch -a
             git checkout -b dev
-            ls
+            cd application/client/desktop/quoteomatictest
+            docker build -t newquoteui-nissannew .
+            docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
+            docker ps -a
 
           
              
