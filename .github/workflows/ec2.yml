@@ -39,10 +39,18 @@ jobs:
             cd application/client/desktop/quoteomatictest
             docker build -t newquoteui-nissannew .
             docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
-            docker ps -a
+            cd ../../../../
+            cd application/services/custom_services/wcmx-acoustic
+            docker build -t acousticmanager-nissannew .
+            docker run --name acousticmanager-nissannew --restart=unless-stopped -d -p 3025:3015 -v applicationnew-nsnew:/code --env-file=../../.env acousticmanager-nissannew
+            cd ..
+            cd application/services/custom_services/cdn-manager
+            docker build -t cdnmanager-nissannew .
+            docker run --name cdnmanager-nissannew --restart=unless-stopped -d -p 3555:3111 -v applicationnew-nsnew:/code --env-file=../../.env --link acousticmanager-nissannew cdnmanager-nissannew
 
-          
-             
+
+
+
              
 
             
