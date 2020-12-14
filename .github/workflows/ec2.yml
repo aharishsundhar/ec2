@@ -35,7 +35,7 @@ jobs:
             git init
             git pull git@github.com:dan-castillo/nissan-demo.git
             git branch -a
-            git checkout dev
+            git checkout -b dev
             ls
 
           
