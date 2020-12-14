@@ -34,8 +34,7 @@ jobs:
             cd nissanautoDP_harish
             git init
             git pull git@github.com:dan-castillo/nissan-demo.git
-            cd nissan-demo
-            git branch
+            git branch -a
             git checkout dev
             ls
 
