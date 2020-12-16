@@ -43,16 +43,16 @@ jobs:
             docker rm -f quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
             docker rmi quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
 
-  #           echo "completely remove and running container"
-  #           cd application/client/desktop/quoteomatictest
-  #           docker build -t newquoteui-nissannew .
-  #           docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
-  #           cd ../../../../ && cd application/services/custom_services/wcmx-acoustic
-  #           docker build -t acousticmanager-nissannew .
-  #           docker run --name acousticmanager-nissannew --restart=unless-stopped -d -p 3025:3015 -v applicationnew-nsnew:/code --env-file=../../.env acousticmanager-nissannew
-  #           cd .. && cd cdn-manager
-  #           docker build -t cdnmanager-nissannew .
-  #           docker run --name cdnmanager-nissannew --restart=unless-stopped -d -p 3555:3111 -v applicationnew-nsnew:/code --env-file=../../.env --link acousticmanager-nissannew cdnmanager-nissannew
+            echo "completely remove and running container"
+            cd application/client/desktop/quoteomatictest
+            docker build -t newquoteui-nissannew .
+            docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
+            cd ../../../../ && cd application/services/custom_services/wcmx-acoustic
+            docker build -t acousticmanager-nissannew .
+            docker run --name acousticmanager-nissannew --restart=unless-stopped -d -p 3025:3015 -v applicationnew-nsnew:/code --env-file=../../.env acousticmanager-nissannew
+            cd .. && cd cdn-manager
+            docker build -t cdnmanager-nissannew .
+            docker run --name cdnmanager-nissannew --restart=unless-stopped -d -p 3555:3111 -v applicationnew-nsnew:/code --env-file=../../.env --link acousticmanager-nissannew cdnmanager-nissannew
   #           cd ../../../ && cd devops/local/docker-compose
   #           docker-compose -p new2-nissan up -d
   #           docker cp ../docker/mongo.js mongo-nissannew:/data/db/
