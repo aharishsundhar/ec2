@@ -44,7 +44,7 @@ jobs:
             docker rmi quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
 
             echo "completely remove and running container"
-            cd application/client/desktop/quoteomatictest
+            cd ../../../ && cd application/client/desktop/quoteomatictest
             docker build -t newquoteui-nissannew .
             docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
             cd ../../../../ && cd application/services/custom_services/wcmx-acoustic
