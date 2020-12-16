@@ -37,11 +37,11 @@ jobs:
             git init
             git pull git@github.com:dan-castillo/nissan-demo.git dev
 
-  #           echo "To check all images and container remove"
-  #           cd devops/local/docker-compose
-  #           docker-compose -p new2-nissan down
-  #           docker rm -f quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
-  #           docker rmi quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
+            echo "To check all images and container remove"
+            cd devops/local/docker-compose
+            docker-compose -p new2-nissan down
+            docker rm -f quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
+            docker rmi quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
 
   #           echo "completely remove and running container"
   #           cd application/client/desktop/quoteomatictest
