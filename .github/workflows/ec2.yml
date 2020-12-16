@@ -32,21 +32,52 @@ jobs:
           privateKey: ${{ secrets.PRIVATE_KEY }}
           command: |
             cd nissanautoDP_harish
+
+            echo "pulling nissan-repostory"
             git init
-            git pull git@github.com:dan-castillo/nissan-demo.git
-            git branch -a
-            git checkout -b dev
-            cd application/client/desktop/quoteomatictest
-            docker build -t newquoteui-nissannew .
-            docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
-            cd ../../../../
-            cd application/services/custom_services/wcmx-acoustic
-            docker build -t acousticmanager-nissannew .
-            docker run --name acousticmanager-nissannew --restart=unless-stopped -d -p 3025:3015 -v applicationnew-nsnew:/code --env-file=../../.env acousticmanager-nissannew
-            cd ..
-            cd cdn-manager
-            docker build -t cdnmanager-nissannew .
-            docker run --name cdnmanager-nissannew --restart=unless-stopped -d -p 3555:3111 -v applicationnew-nsnew:/code --env-file=../../.env --link acousticmanager-nissannew cdnmanager-nissannew
+            git pull git@github.com:dan-castillo/nissan-demo.git dev
+
+  #           echo "To check all images and container remove"
+  #           cd devops/local/docker-compose
+  #           docker-compose -p new2-nissan down
+  #           docker rm -f quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
+  #           docker rmi quoteomaticui-nissannew acousticmanager-nissannew cdnmanager-nissannew
+
+  #           echo "completely remove and running container"
+  #           cd application/client/desktop/quoteomatictest
+  #           docker build -t newquoteui-nissannew .
+  #           docker run --name quoteomaticui-nissannew --restart=unless-stopped -d -p 5098:5000 -v applicationnew-nsnew:/app newquoteui-nissannew
+  #           cd ../../../../ && cd application/services/custom_services/wcmx-acoustic
+  #           docker build -t acousticmanager-nissannew .
+  #           docker run --name acousticmanager-nissannew --restart=unless-stopped -d -p 3025:3015 -v applicationnew-nsnew:/code --env-file=../../.env acousticmanager-nissannew
+  #           cd .. && cd cdn-manager
+  #           docker build -t cdnmanager-nissannew .
+  #           docker run --name cdnmanager-nissannew --restart=unless-stopped -d -p 3555:3111 -v applicationnew-nsnew:/code --env-file=../../.env --link acousticmanager-nissannew cdnmanager-nissannew
+  #           cd ../../../ && cd devops/local/docker-compose
+  #           docker-compose -p new2-nissan up -d
+  #           docker cp ../docker/mongo.js mongo-nissannew:/data/db/
+  #           docker exec -ti mongo-nissannew mongo -u admin -p 'password' --authenticationDatabase 'admin' quoteomatictest /data/db/mongo.js
+  # Upload_S3:
+
+  #   runs-on: ubuntu-latest
+  #   needs: ec2login
+  #   steps:
+      
+  #     - name: Execute SSH commmands on remote server
+  #       uses: JimCronqvist/action-ssh@master
+  #       with:
+  #         hosts: 'ubuntu@ec2-34-197-46-177.compute-1.amazonaws.com'
+  #         privateKey: ${{ secrets.PRIVATE_KEY }}
+  #         command: |
+  #           echo "s3 bucket to upload file"
+  #           cd distharish_harish
+  #           bash distnissan.sh
+
+      
+
+
+
+
 
 
 
