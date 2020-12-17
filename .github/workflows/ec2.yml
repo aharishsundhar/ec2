@@ -50,7 +50,7 @@ jobs:
             cd .. && cd cdn-manager
             docker build -t cdnmanager-nissan .
             docker run --name cdnmanager-nissan --restart=unless-stopped -d -p 3111:3111 -v applicationnew-nsnew:/code --env-file=../../.env --link acousticmanager-nissan cdnmanager-nissan
-            cd ../../../ && cd devops/local/docker-compose
+            cd ../../../../ && cd devops/local/docker-compose
             docker-compose -p new2-nissan up -d
             docker cp ../docker/mongo.js mongo-nissan:/data/db/
             docker exec -ti mongo-nissan mongo -u admin -p 'password' --authenticationDatabase 'admin' quoteomatictest /data/db/mongo.js
